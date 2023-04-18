@@ -3,6 +3,8 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 import Video5 from './examples/Video5';
+import Video7 from './examples/Video7';
+
 function App() {
   const [count, setCount] = useState(0)
 
@@ -16,18 +18,15 @@ function App() {
           <img src={reactLogo} className="logo react" alt="React logo" />
         </a>
       </div>
-      <h1>Vite + React</h1>
+
       <div className="card">
         <button onClick={() => setCount((count) => count + 1)}>
           count is {count}
         </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
       </div>
-      <p className="read-the-docs">
-        <Video5 />
-      </p>
+      <h2 className="read-the-docs">
+        <Video7 />
+      </h2>
     </div>
   )
 }
