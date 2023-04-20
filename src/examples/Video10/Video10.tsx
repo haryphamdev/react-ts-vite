@@ -1,18 +1,34 @@
 import { useState } from "react";
 import './Video10.css'
+
+export interface ITest {
+    name: string;
+    age: number
+}
+
+interface IUser {
+    name: string;
+    age: number;
+    city: string;
+}
+
 const Video10 = () => {
 
-    const [name, setName] = useState("");
-    const [age, setAge] = useState(0);
-    const [city, setCity] = useState(["Hà Nội", "Đà Nẵng", "Hồ Chí Minh"]);
+    //1. bổ sung type
+    const [name, setName] = useState<string>("");
+    const [age, setAge] = useState<number | string>("");
+    const [city, setCity] = useState<string[]>(["Hà Nội", "Đà Nẵng", "Hồ Chí Minh"]);
 
-    const [users, setUsers] = useState([
+
+    const [users, setUsers] = useState<IUser[]>([
         { name: "Eric", age: 25, city: "Hà Nội" },
         { name: "Eric1", age: 26, city: "Đà Nẵng" },
         { name: "Eric2", age: 27, city: "Hồ Chí Minh" },
     ])
 
-    const [isShowBtn, setIsShowBtn] = useState(false);
+    const [test, setTest] = useState<ITest | null>(null)
+
+    const [isShowBtn, setIsShowBtn] = useState<boolean>(false);
 
 
 
@@ -22,18 +38,21 @@ const Video10 = () => {
             <div className="form-user">
                 <div>
                     <label >Name:</label><br />
-                    <input type="text" value="John" /><br />
+                    <input type="text" value={name} /><br />
                 </div>
                 <div>
                     <label >Age:</label><br />
-                    <input type="text" value="Doe" /><br />
+                    <input type="text" value={age} /><br />
                 </div>
                 <div>
                     <label >City:</label><br />
+                    {/* update with loop */}
                     <select>
-                        <option>Hà Nội</option>
-                        <option>Đà Nẵng</option>
-                        <option>Hồ Chí Minh</option>
+                        {city.map(item => {
+                            return (
+                                <option key={item}>{item}</option>
+                            )
+                        })}
                     </select>
                 </div>
 
@@ -51,21 +70,18 @@ const Video10 = () => {
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>Jill</td>
-                            <td>Smith</td>
-                            <td>50</td>
-                        </tr>
-                        <tr>
-                            <td>Eve</td>
-                            <td>Jackson</td>
-                            <td>94</td>
-                        </tr>
-                        <tr>
-                            <td>John</td>
-                            <td>Doe</td>
-                            <td>80</td>
-                        </tr>
+                        {/* update with loop */}
+                        {users.map(user => {
+                            return (
+                                <tr key={user.name}>
+                                    <td>{user.name}</td>
+                                    <td>{user.age}</td>
+                                    <td>{user.city}</td>
+                                </tr>
+                            )
+                        })}
+
+
                     </tbody>
                 </table>
             </div>
