@@ -14,9 +14,10 @@ interface IUser {
 
 const Video10 = () => {
 
-    //1. bổ sung type
+    //todo: gán default value
     const [name, setName] = useState<string>("");
     const [age, setAge] = useState<number | string>("");
+
     const [city, setCity] = useState<string[]>(["Hà Nội", "Đà Nẵng", "Hồ Chí Minh"]);
 
 
@@ -25,11 +26,6 @@ const Video10 = () => {
         { name: "Eric1", age: 26, city: "Đà Nẵng" },
         { name: "Eric2", age: 27, city: "Hồ Chí Minh" },
     ])
-
-    const [test, setTest] = useState<ITest | null>(null)
-
-    const [isShowBtn, setIsShowBtn] = useState<boolean>(false);
-
 
 
     return (
@@ -46,7 +42,6 @@ const Video10 = () => {
                 </div>
                 <div>
                     <label >City:</label><br />
-                    {/* update with loop */}
                     <select>
                         {city.map(item => {
                             return (
@@ -70,7 +65,6 @@ const Video10 = () => {
                         </tr>
                     </thead>
                     <tbody>
-                        {/* update with loop */}
                         {users.map(user => {
                             return (
                                 <tr key={user.name}>

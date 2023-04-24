@@ -28,7 +28,7 @@ function App() {
         </button>
       </div>
       <h2 className="read-the-docs">
-        <Video13 />
+        <Video10 />
       </h2>
     </div>
   )
