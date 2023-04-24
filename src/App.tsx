@@ -6,6 +6,7 @@ import Video5 from './examples/Video5';
 import Video7 from './examples/Video7';
 import Video9 from './examples/Video9';
 import Video10 from './examples/Video10/Video10';
+import Video13 from './examples/Video13';
 
 function App() {
   const [count, setCount] = useState(0)
@@ -27,7 +28,7 @@ function App() {
         </button>
       </div>
       <h2 className="read-the-docs">
-        <Video10 />
+        <Video13 />
       </h2>
     </div>
   )
