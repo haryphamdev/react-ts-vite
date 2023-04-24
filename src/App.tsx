@@ -28,7 +28,10 @@ function App() {
         </button>
       </div>
       <h2 className="read-the-docs">
-        <Video10 />
+        <Video10
+          defaultAge={25}
+          defautName={'Eric333'}
+        />
       </h2>
     </div>
   )

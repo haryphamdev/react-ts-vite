@@ -12,11 +12,15 @@ interface IUser {
     city: string;
 }
 
-const Video10 = () => {
-
-    //todo: gán default value
-    const [name, setName] = useState<string>("");
-    const [age, setAge] = useState<number | string>("");
+interface IProps {
+    defautName: string;
+    defaultAge: number | string;
+}
+const Video10 = (props: IProps) => {
+    const { defautName, defaultAge } = props;
+    //todo: gán default value, đồng thời định nghĩa props cho component
+    const [name, setName] = useState<string>(defautName);
+    const [age, setAge] = useState<number | string>(defaultAge);
 
     const [city, setCity] = useState<string[]>(["Hà Nội", "Đà Nẵng", "Hồ Chí Minh"]);
 
