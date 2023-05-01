@@ -1,5 +1,9 @@
 import { Button, Modal } from 'antd';
 import { useState } from 'react';
+import { IoLogoReact } from 'react-icons/io5';
+import { BsArrowRight, BsInstagram, BsTwitter } from 'react-icons/bs';
+import { DiNodejsSmall } from 'react-icons/di';
+import { AiFillFacebook } from 'react-icons/ai';
 
 const Project = () => {
     const [isModalOpen, setIsModalOpen] = useState(false);
@@ -18,46 +22,91 @@ const Project = () => {
 
     const dataProjects = [
         {
-            image: "img/svg/camera-diaphragm.svg",
-            title: "Website Clone Tiki",
-            shortDescription: "Web design is a similar process of creation, with the intention of presenting the content on electronic pages ...",
+            image: <IoLogoReact
+                size={50}
+                color={'#2bebfd'}
+            />,
+            title: "Tiki Clone",
+            shortDescription: "Website thương mại điện tử hỗ trợ & quản lý mua bán sách",
             detail: {
-                description: "",//miêu tả dự án làm gì
-                technology: "", //công nghệ sử dụng
-                member: "",// bao nhiêu members
-                role: "",// vai trò trong dự án
-                demo: "", //link video,  link deploy
-                github: "", //link github,
+                description: "(Self-learning) Xây dựng website thương mại điện tử clone Tiki",//miêu tả dự án làm gì
+                frontend: "React (Typescript), Redux Toolkit, Ant Design", //công nghệ sử dụng
+                backend: "Node.JS (Express), MongoDB", //công nghệ sử dụng
+                member: 1,// bao nhiêu members
+                role: "Developer",// vai trò trong dự án
+                demo: "https://react.hoidanit.com.vn/", //link video,  link deploy
+                github: "https://github.com/haryphamdev/react-ts-vite", //link github,
             },
 
         },
         {
-            image: "img/svg/camera-diaphragm.svg",
-            title: "Website Clone Tiki",
-            shortDescription: "Web design is a similar process of creation, with the intention of presenting the content on electronic pages ...",
+            image: <DiNodejsSmall
+                size={50}
+                color={'#00a80c'}
+            />,
+            title: "Bookingcare Clone",
+            shortDescription: "Website hỗ trợ đặt lịch khám bệnh dành cho bệnh viện và các phòng khám",
             detail: {
-                description: "",//miêu tả dự án làm gì
-                technology: "", //công nghệ sử dụng
-                member: "",// bao nhiêu members
-                role: "",// vai trò trong dự án
-                demo: "", //link video,  link deploy
-                github: "", //link github,
+                description: "(Self-learning) Xây dựng website đặt lịch khám bệnh, clone website bookingcare.vn",//miêu tả dự án làm gì
+                frontend: "React (Typescript), Redux Toolkit, Ant Design", //công nghệ sử dụng
+                backend: "Node.JS (Express), MongoDB", //công nghệ sử dụng
+                member: 1,// bao nhiêu members
+                role: "Developer",// vai trò trong dự án
+                demo: "https://react.hoidanit.com.vn/", //link video,  link deploy
+                github: "https://github.com/haryphamdev/react-ts-vite", //link github,
             },
-
         },
         {
-            image: "img/svg/camera-diaphragm.svg",
-            title: "Website Clone Tiki",
-            shortDescription: "Web design is a similar process of creation, with the intention of presenting the content on electronic pages ...",
+            image: <AiFillFacebook
+                size={50}
+                color={'#4096ff'}
+            />,
+            title: "Facebook Clone",
+            shortDescription: "Website mạng xã hội giúp kết nối mọi người có cùng chung sở thích",
             detail: {
-                description: "",//miêu tả dự án làm gì
+                description: "(Self-learning) Xây dựng mạng xã hội giúp kết nối mọi người",//miêu tả dự án làm gì
                 technology: "", //công nghệ sử dụng
-                member: "",// bao nhiêu members
-                role: "",// vai trò trong dự án
-                demo: "", //link video,  link deploy
-                github: "", //link github,
+                frontend: "React (Typescript), Redux Toolkit, Ant Design", //công nghệ sử dụng
+                backend: "Node.JS (Express), MongoDB", //công nghệ sử dụng
+                member: 1,// bao nhiêu members
+                role: "Developer",// vai trò trong dự án
+                demo: "https://react.hoidanit.com.vn/", //link video,  link deploy
+                github: "https://github.com/haryphamdev/react-ts-vite", //link github,
             },
-
+        },
+        {
+            image: <BsTwitter
+                size={50}
+                color={'#4096ff'}
+            />,
+            title: "Twitter Clone",
+            shortDescription: "Website mạng xã hội giúp kết nối mọi người có cùng chung sở thích",
+            detail: {
+                description: "(Self-learning) Xây dựng mạng xã hội giúp kết nối mọi người",//miêu tả dự án làm gì
+                frontend: "React (Typescript), Redux Toolkit, Ant Design", //công nghệ sử dụng
+                backend: "Node.JS (Express), MongoDB", //công nghệ sử dụng
+                member: 1,// bao nhiêu members
+                role: "Developer",// vai trò trong dự án
+                demo: "https://react.hoidanit.com.vn/", //link video,  link deploy
+                github: "https://github.com/haryphamdev/react-ts-vite", //link github,
+            },
+        },
+        {
+            image: <BsInstagram
+                size={50}
+                color={'#e84a65'}
+            />,
+            title: "Instagram Clone",
+            shortDescription: "Website mạng xã hội giúp kết nối mọi người có cùng chung sở thích",
+            detail: {
+                description: "(Self-learning) Xây dựng mạng xã hội giúp kết nối mọi người",//miêu tả dự án làm gì
+                frontend: "React (Typescript), Redux Toolkit, Ant Design", //công nghệ sử dụng
+                backend: "Node.JS (Express), MongoDB", //công nghệ sử dụng
+                member: 1,// bao nhiêu members
+                role: "Developer",// vai trò trong dự án
+                demo: "https://react.hoidanit.com.vn/", //link video,  link deploy
+                github: "https://github.com/haryphamdev/react-ts-vite", //link github,
+            },
         }
     ]
     return (
@@ -65,10 +114,33 @@ const Project = () => {
             <Button type="primary" onClick={showModal}>
                 Open Modal
             </Button>
-            <Modal title="Basic Modal" open={isModalOpen} onOk={handleOk} onCancel={handleCancel}>
-                <p>Some contents...</p>
-                <p>Some contents...</p>
-                <p>Some contents...</p>
+            <Modal
+                title="Dự Án Bla bla"
+                open={isModalOpen}
+                onOk={handleOk}
+                onCancel={handleCancel}
+                footer={null}
+                maskClosable={false}
+            >
+                <ul>
+                    <li>Miêu tả: (Self-learning) Xây dựng mạng xã hội giúp kết nối mọi người.</li>
+                    <li>Frontend: React (Typescript), Redux Toolkit, Ant Design"</li>
+                    <li>Backend: Node.JS (Express), MongoDB"</li>
+                    <li>Số lượng thành viên dự án: 1</li>
+                    <li>Vai trò: Developer</li>
+                    <li>
+                        Demo:
+                        <a href='https://react.hoidanit.com.vn/' target='_blank'>
+                            https://react.hoidanit.com.vn/
+                        </a>
+                    </li>
+                    <li>
+                        Github:
+                        <a href='https://github.com/haryphamdev/react-ts-vite' target='_blank'>
+                            https://github.com/haryphamdev/react-ts-vite
+                        </a>
+                    </li>
+                </ul>
             </Modal>
 
             <div className="arlo_tm_section" id="project">
@@ -83,15 +155,24 @@ const Project = () => {
                                 {dataProjects.map((item, index) => {
                                     return (
                                         <li>
-                                            <div className="inner">
+                                            <div
+                                                className="inner" title="Xem Chi Tiết"
+                                                style={{ cursor: "pointer" }}>
                                                 <div className="icon">
-                                                    <img className="svg" src={item.image} alt="camera-diaphragm" />
+                                                    {item.image}
                                                 </div>
                                                 <div className="title_service">
                                                     <h3>{item.title}</h3>
                                                 </div>
                                                 <div className="text">
                                                     <p>{item.shortDescription}</p>
+                                                </div>
+                                                <div className="view_detail" style={{ padding: "5px 0" }}>
+                                                    <span style={{ cursor: "pointer" }}>
+                                                        <BsArrowRight />
+                                                        &nbsp;
+                                                        Xem Chi Tiết
+                                                    </span>
                                                 </div>
                                             </div>
                                         </li>
