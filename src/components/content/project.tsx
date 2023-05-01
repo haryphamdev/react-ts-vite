@@ -5,22 +5,26 @@ import { BsArrowRight, BsInstagram, BsTwitter } from 'react-icons/bs';
 import { DiNodejsSmall } from 'react-icons/di';
 import { AiFillFacebook } from 'react-icons/ai';
 
+interface IProject {
+    image: JSX.Element;
+    title: string;
+    shortDescription: string;
+    detail: {
+        description: string;
+        frontend: string;
+        backend: string;
+        member: number;
+        role: string;
+        demo: string;
+        github: string;
+    }
+}
+
 const Project = () => {
-    const [isModalOpen, setIsModalOpen] = useState(false);
+    const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
+    const [dataDetail, setDataDetail] = useState<IProject | null>(null);
 
-    const showModal = () => {
-        setIsModalOpen(true);
-    };
-
-    const handleOk = () => {
-        setIsModalOpen(false);
-    };
-
-    const handleCancel = () => {
-        setIsModalOpen(false);
-    };
-
-    const dataProjects = [
+    const dataProjects: IProject[] = [
         {
             image: <IoLogoReact
                 size={50}
@@ -65,7 +69,6 @@ const Project = () => {
             shortDescription: "Website mạng xã hội giúp kết nối mọi người có cùng chung sở thích",
             detail: {
                 description: "(Self-learning) Xây dựng mạng xã hội giúp kết nối mọi người",//miêu tả dự án làm gì
-                technology: "", //công nghệ sử dụng
                 frontend: "React (Typescript), Redux Toolkit, Ant Design", //công nghệ sử dụng
                 backend: "Node.JS (Express), MongoDB", //công nghệ sử dụng
                 member: 1,// bao nhiêu members
@@ -109,38 +112,42 @@ const Project = () => {
             },
         }
     ]
+
+    const handleCloseModal = () => {
+        setIsModalOpen(false);
+        setDataDetail(null);
+    }
     return (
         <>
-            <Button type="primary" onClick={showModal}>
-                Open Modal
-            </Button>
             <Modal
-                title="Dự Án Bla bla"
+                title={dataDetail && dataDetail.title ? `Dự án ${dataDetail.title}` : ""}
                 open={isModalOpen}
-                onOk={handleOk}
-                onCancel={handleCancel}
+                onOk={() => handleCloseModal()}
+                onCancel={() => handleCloseModal()}
                 footer={null}
                 maskClosable={false}
             >
-                <ul>
-                    <li>Miêu tả: (Self-learning) Xây dựng mạng xã hội giúp kết nối mọi người.</li>
-                    <li>Frontend: React (Typescript), Redux Toolkit, Ant Design"</li>
-                    <li>Backend: Node.JS (Express), MongoDB"</li>
-                    <li>Số lượng thành viên dự án: 1</li>
-                    <li>Vai trò: Developer</li>
-                    <li>
-                        Demo:
-                        <a href='https://react.hoidanit.com.vn/' target='_blank'>
-                            https://react.hoidanit.com.vn/
-                        </a>
-                    </li>
-                    <li>
-                        Github:
-                        <a href='https://github.com/haryphamdev/react-ts-vite' target='_blank'>
-                            https://github.com/haryphamdev/react-ts-vite
-                        </a>
-                    </li>
-                </ul>
+                {dataDetail &&
+                    <ul>
+                        <li>Miêu tả: {dataDetail.detail.description}</li>
+                        <li>Frontend: {dataDetail.detail.frontend}</li>
+                        <li>Backend: {dataDetail.detail.backend}</li>
+                        <li>Số lượng thành viên dự án: {dataDetail.detail.member}</li>
+                        <li>Vai trò: {dataDetail.detail.role}</li>
+                        <li>
+                            Demo:
+                            <a href={dataDetail.detail.demo} target='_blank'>
+                                {dataDetail.detail.demo}
+                            </a>
+                        </li>
+                        <li>
+                            Github:
+                            <a href={dataDetail.detail.github} target='_blank'>
+                                {dataDetail.detail.github}
+                            </a>
+                        </li>
+                    </ul>
+                }
             </Modal>
 
             <div className="arlo_tm_section" id="project">
@@ -154,10 +161,15 @@ const Project = () => {
                             <ul>
                                 {dataProjects.map((item, index) => {
                                     return (
-                                        <li>
+                                        <li key={`${index}-project`}>
                                             <div
                                                 className="inner" title="Xem Chi Tiết"
-                                                style={{ cursor: "pointer" }}>
+                                                style={{ cursor: "pointer" }}
+                                                onClick={() => {
+                                                    setDataDetail(item)
+                                                    setIsModalOpen(true);
+                                                }}
+                                            >
                                                 <div className="icon">
                                                     {item.image}
                                                 </div>
