@@ -1,5 +1,6 @@
 import hoidanitLogo from '@/assets/img/about/hoidanit.jpeg';
 import myCV from '@/assets/cv-eric.pdf';
+import { TypeAnimation } from 'react-type-animation';
 
 const About = () => {
     return (
@@ -9,7 +10,7 @@ const About = () => {
                     <div className="container">
                         <div className="arlo_tm_title_holder">
                             <h3>About Me</h3>
-                            <span>Main informations about me</span>
+                            <span>Về tác giả</span>
                         </div>
                         <div className="arlo_tm_about_wrap">
                             <div className="author_wrap">
@@ -28,42 +29,67 @@ const About = () => {
                                 </div>
                                 <div className="rightbox">
                                     <div className="arlo_tm_mini_title_holder">
-                                        <h4>I'm Alan Michaelis and <span className="arlo_tm_animation_text_word"></span></h4>
+                                        <h4>Hi there... I'm a
+                                            &nbsp;
+                                            <TypeAnimation
+                                                sequence={[
+                                                    'Freelancer', // Types 'One'
+                                                    2000, // Waits 1s
+                                                    'UI/UX Designer', // Deletes 'One' and types 'Two'
+                                                    2000, // Waits 2s
+                                                    'Web Developer',
+                                                    2000,
+
+                                                    () => {
+                                                        console.log('Sequence completed'); // Place optional callbacks anywhere in the array
+                                                    }
+                                                ]}
+                                                wrapper="span"
+                                                cursor={true}
+                                                repeat={Infinity}
+                                            // style={{ fontSize: '2em', display: 'inline-block' }}
+                                            />
+                                        </h4>
                                     </div>
                                     <div className="definition">
-                                        <p>Hi! My name is <strong>Alan Michaelis</strong>. I am a Web Developer, and I'm very passionate and dedicated to my work. With 20 years experience as a professional Web developer, I have acquired the skills and knowledge necessary to make your project a success. I enjoy every step of the design process, from discussion and collaboration to concept and execution, but I find the most satisfaction in seeing the finished product do everything for you that it was created to do.</p>
+                                        <p>Xin chào, mình là Eric, hay còn được biết tới với tên gọi <strong>Hỏi Dân IT</strong>.
+                                            Vốn là một lập trình viên website, cơ mà mình có sở thích không thích code _._
+                                            <br /><br />
+                                            Mình đã từng làm qua lĩnh vực chứng khoán, sau đấy là lĩnh vực ngân hàng.
+                                            <br />
+                                            Mình chọn 2 lĩnh vực này, để theo đuổi đam mê "tiền" thôi ấy mà ~.~
+                                            <br /><br />
+                                            Và hiện tại, mình đang 'dev cho 1 bank nào đấy ở Hà Nội'
+                                        </p>
                                     </div>
+
                                     <div className="about_short_contact_wrap">
                                         <ul>
                                             <li>
-                                                <span><label>Birthday:</label> 01.07.1990</span>
+                                                <span><label>Ngày Sinh:</label> 30.02.199x (Gen Z)</span>
                                             </li>
                                             <li>
-                                                <span><label>Age:</label> 28</span>
+                                                <span><label>Giới tính:</label> Nam</span>
                                             </li>
                                             <li>
-                                                <span><label>City:</label> New York, USA</span>
+                                                <span><label>Tốt nghiệp:</label> Đại Học Back Khoa Hà Nội</span>
                                             </li>
                                             <li>
-                                                <span><label>Interests:</label> Soccer, UFC</span>
+                                                <span><label>Chuyên ngành:</label> Kỹ Sư Công Nghệ Phần Mềm</span>
+                                            </li>
+
+                                            <li>
+                                                <span><label>Website:</label> <a href="https://hoidanit.com.vn/" target='_blank'>www.hoidanit.com.vn</a></span>
                                             </li>
                                             <li>
-                                                <span><label>Study:</label> Chicago University</span>
+                                                <span><label>Facebook:</label> <a href="https://www.facebook.com/askITwithERIC/" target='_blank'>askITwithERIC</a></span>
+                                            </li>
+
+                                            <li>
+                                                <span><label>Youtube:</label> <a href="https://www.youtube.com/@hoidanit" target='_blank'>&#64;hoidanit</a></span>
                                             </li>
                                             <li>
-                                                <span><label>Degree:</label> Master</span>
-                                            </li>
-                                            <li>
-                                                <span><label>Website:</label> <a href="#">www.mywebsite.com</a></span>
-                                            </li>
-                                            <li>
-                                                <span><label>Mail:</label> <a href="mailto:example@gmail.com">mymail&#64;gmail.com</a></span>
-                                            </li>
-                                            <li>
-                                                <span><label>Phone:</label> <a href="#">+77 022 177 05 05</a></span>
-                                            </li>
-                                            <li>
-                                                <span><label>Twitter:</label> <a href="#">&#64;myusername</a></span>
+                                                <span><label>TikTok:</label> <a href="https://www.tiktok.com/@hoidanit" target='_blank'>&#64;hoidanit</a></span>
                                             </li>
                                         </ul>
                                     </div>
