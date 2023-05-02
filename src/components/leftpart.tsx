@@ -3,7 +3,7 @@ import { FaFacebookSquare } from 'react-icons/fa';
 import { GrYoutube } from 'react-icons/gr';
 import { BsGithub, BsTiktok } from 'react-icons/bs';
 import { SiUdemy } from 'react-icons/si';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 interface IProps {
     hideLeftPart: boolean;
@@ -14,6 +14,21 @@ const LeftPart = (props: IProps) => {
 
     const [activeTab, setActiveTab] = useState<string>("home");
 
+    useEffect(() => {
+        const { hash } = window.location;
+
+        if (hash) {
+            const tab = hash.replace('#', "");
+            setActiveTab(tab);
+
+            const section = document.querySelector(`${hash}`);
+            if (section) {
+                section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        }
+
+    }, [])
+
     const handleClickTab = (tab: string, event: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
         event.preventDefault();
         setActiveTab(tab);
@@ -21,6 +36,9 @@ const LeftPart = (props: IProps) => {
         const section = document.querySelector(`#${tab}`);
         if (section) {
             section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            setTimeout(() => {
+                window.location.hash = tab;
+            }, 1000)
         }
     }
     return (
