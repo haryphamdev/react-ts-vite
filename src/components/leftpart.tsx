@@ -4,10 +4,16 @@ import { GrYoutube } from 'react-icons/gr';
 import { BsGithub, BsTiktok } from 'react-icons/bs';
 import { SiUdemy } from 'react-icons/si';
 
-const LeftPart = () => {
+interface IProps {
+    hideLeftPart: boolean;
+    setHideLeftPart: (value: boolean) => void;
+}
+
+const LeftPart = (props: IProps) => {
+
     return (
         <>
-            <div className="arlo_tm_leftpart_wrap">
+            <div className={props.hideLeftPart === true ? "arlo_tm_leftpart_wrap opened" : "arlo_tm_leftpart_wrap "}>
                 <div className="leftpart_inner">
                     <div className="logo_wrap">
                         <a href="#"><img src={desktopLogo} alt="desktop-logo" /></a>
@@ -46,7 +52,11 @@ const LeftPart = () => {
                             </ul>
                         </div>
                     </div>
-                    <a className="arlo_tm_resize" href="#"><i className="xcon-angle-left"></i></a>
+                    <a
+                        className={props.hideLeftPart ? "arlo_tm_resize opened" : "arlo_tm_resize"}
+                        href="#"
+                        onClick={() => props.setHideLeftPart(!props.hideLeftPart)} //toggle
+                    ><i className={props.hideLeftPart ? "xcon-angle-left opened" : "xcon-angle-left"}></i></a>
                 </div>
             </div>
         </>
