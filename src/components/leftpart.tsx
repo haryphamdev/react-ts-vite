@@ -4,6 +4,7 @@ import { GrYoutube } from 'react-icons/gr';
 import { BsGithub, BsTiktok } from 'react-icons/bs';
 import { SiUdemy } from 'react-icons/si';
 import { useState, useEffect } from 'react';
+import { isMobile } from 'react-device-detect';
 
 interface IProps {
     hideLeftPart: boolean;
@@ -114,11 +115,19 @@ const LeftPart = (props: IProps) => {
                             </ul>
                         </div>
                     </div>
-                    <a
-                        className={props.hideLeftPart ? "arlo_tm_resize opened" : "arlo_tm_resize"}
-                        href="#"
-                        onClick={() => props.setHideLeftPart(!props.hideLeftPart)} //toggle
-                    ><i className={props.hideLeftPart ? "xcon-angle-left opened" : "xcon-angle-left"}></i></a>
+                    {!isMobile &&
+                        <a
+                            className={props.hideLeftPart ? "arlo_tm_resize opened" : "arlo_tm_resize"}
+                            href="#"
+                            onClick={(e) => {
+                                e.preventDefault()
+                                props.setHideLeftPart(!props.hideLeftPart)
+                            }} //toggle
+                        >
+                            <i className={props.hideLeftPart ? "xcon-angle-left opened" : "xcon-angle-left"}>
+                            </i>
+                        </a>
+                    }
                 </div>
             </div>
         </>
