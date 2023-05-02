@@ -11,7 +11,9 @@
   },
   "dependencies": {
     "@ramonak/react-progress-bar": "5.0.3",
+    "@types/parallax-js": "3.1.0",
     "antd": "5.4.6",
+    "parallax-js": "3.1.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "4.8.0",
