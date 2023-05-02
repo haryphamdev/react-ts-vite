@@ -29,7 +29,10 @@ const MobileMenu = () => {
             <div className="arlo_tm_mobile_header_wrap">
                 <div className="main_wrap">
                     <div className="logo">
-                        <a href="#"><img src={imgMobile} alt="mobile_logo" /></a>
+                        <h5 style={{ color: 'white' }} >
+                            {/* <img src={imgMobile} alt="mobile_logo" /> */}
+                            Hỏi Dân !T
+                        </h5>
                     </div>
                     <div className="arlo_tm_trigger ">
                         <div
